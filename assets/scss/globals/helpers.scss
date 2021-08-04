@@ -1,0 +1,141 @@
+@use 'sass:math';
+@use "./palette.scss" as *;
+
+@mixin grids($cols: 1, $colGap : 0px,  $rowGap : 0px, $rows: 0) {
+    display: grid;
+    grid-gap: $rowGap $colGap;
+    grid-template-columns: repeat($cols, 1fr);
+
+    @if($rows != 0){
+        grid-template-rows: repeat($rows, 1fr);
+    } @else {
+        grid-template-rows: auto;
+    }
+}
+
+.bg-tint {
+    &::before {
+        content: '';
+        background-color: rgba(0, 0, 0, .25);
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+    }
+
+   section > div > div{
+        p, li, a {
+           text-shadow: 0px 0px 3px #0000006e;
+        } 
+    }
+}
+
+.thin-col {
+    width: 100%;
+    max-width: 750px;
+    > figure {
+        margin-bottom: 30px;
+    }
+
+    .cols-of-300 {
+        @media (min-width: 1024px){
+            grid-template-columns: repeat(auto-fit, minmax(300px, calc(50% - 1rem)));
+        }
+    }
+}
+
+@mixin remove-list-style {
+    list-style: none;
+}
+
+.no-bullets {
+    @include remove-list-style;
+}
+
+ @mixin rounded-input {
+    background-color: transparent;
+    min-width: 330px;
+    border-radius: 50px;
+    border: 1px solid $navy;
+    height: 40px;
+ }
+ 
+
+@mixin ratio($ratio: 1){
+	width: 100%;
+    aspect-ratio: 1/#{$ratio};
+    display: block;
+
+    @supports not (aspect-ratio: auto) {
+        display: block;
+		padding-top: calc(100% * #{$ratio});
+		height: 0;
+		position: relative;
+		overflow: hidden;
+
+        * {
+            position: absolute;
+            top: 0;
+        }
+	}
+}
+
+@mixin center-absolute($elSize: 15px){
+    position: absolute;
+    left: calc(50% - (#{$elSize} / 2));
+    top: calc(50% - (#{$elSize} / 2));
+}
+
+@mixin quote-marks($left, $right: null, $pseduoEl: '::after'){
+    position: relative;
+    &#{$pseduoEl} {
+        content: url('/images/icons/laundry-lineup-letters-navy.svg');
+        width: 15px;
+        height: 15px;
+        // background-image: url('/images/icons/laundry-lineup-letters-navy.svg');
+        position: absolute;
+        top: -14px;
+        @if($left){
+            left: $left;
+        }
+        @if($right){
+            right: $right;
+        }
+    }
+}
+
+@mixin responsive-input($color: $navy) {
+    position: relative;
+    label {
+            display: none;
+    }
+    p {
+        position: absolute;
+        top: -6px;
+        font-size: 11px !important;
+        color: #777;
+        transition: all 0.2s linear;
+        pointer-events: none;
+    }
+    input::placeholder {
+        opacity: 0 !important;
+    }
+    input:placeholder-shown:not(:focus) {
+        + p {
+            top: 12px;
+            margin: 0;
+            font-size: 14px !important;
+            color: $color;
+        }
+    }
+    input {
+        height: 40px;
+        width: 100%;
+    }
+}
+
+.label-placeholder {
+    @include responsive-input();
+}

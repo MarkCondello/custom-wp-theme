@@ -1,0 +1,25 @@
+@use '../globals/variables.scss' as vars;
+@use '../globals/breakpoints.scss' as breakpoints;
+
+main {
+    margin: auto;
+    max-width: vars.$header-max-width;
+    min-height: calc(100vh / 2);
+    > section {
+        max-width: vars.$content-max-width;
+        margin: auto;
+        text-align: center;
+        padding: 0 1rem 65px;
+        @include breakpoints.media-breakpoint-up('lg'){
+            padding: 0 0 85px;
+            > div {
+                padding-left: 200px;
+                padding-right: 200px;   
+                h1 {
+                    margin-right: 22px;
+                    margin-left: 22px;
+                }
+            }
+        }
+    }
+}

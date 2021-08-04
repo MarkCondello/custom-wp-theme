@@ -1,0 +1,124 @@
+ @use '../globals/palette.scss' as palette;
+@use '../globals/helpers.scss' as helpers;
+
+input,
+select {
+    background-color: transparent;
+    outline: none;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    
+    &[type=number]::-webkit-inner-spin-button, 
+    &[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
+}
+
+.-search {
+    display: inline-block;
+    @include helpers.rounded-input();
+    padding: 0 1rem 0 2.5rem;
+    position: relative;
+
+    // &::before {
+    //     content: url('/images/icons/search.svg');
+    //     position: absolute;
+    //     top: 13px;
+    //     left: 1rem;
+    //     width: 15px;
+    //     height: 15px;
+    // }
+
+    input {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+select {
+    &.-rounded {
+        @include helpers.rounded-input();
+        padding: 0 1rem;
+    }
+}
+
+form.styled {
+    .label-placeholder {
+        border-bottom: 1px solid palette.$navy;
+        height: 40px;
+        margin-top: .75rem;
+    }
+    .check-radio {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+    }
+}
+
+.underlined-select {
+    width: 100%;
+    label {
+        display: block;
+        text-align: left;
+    }
+    select {
+        border-bottom: 1px solid palette.$navy;
+        height: 40px;
+        width: 100%;
+    }
+}
+
+.check-radio {
+    position: relative;
+    
+    input{
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        &:hover {
+            cursor: pointer;
+        }
+    
+        &[type='checkbox'] + label {
+        display: flex;
+        margin-left: 0;
+        }
+    
+        &[type='radio'] + label {
+        display: flex;
+        margin-left: 0;
+        }
+
+        + label:before {
+            content: '';
+            background-color: transparent;
+            border: 1px solid palette.$navy;
+            border-radius: 50%;
+            color: palette.$navy;
+            font-size: 1.5rem;
+            height: 20px;
+            line-height: 1;
+            margin-right: 20px;
+            padding: 2px;
+            text-align: center;
+            width: 20px;
+            transition: all .5s;
+        }
+
+        &:checked + label:before {
+            content:"\2713"; 
+            background-color: rgba(palette.$navy, .25);
+        }
+    }
+
+    label {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+    }
+}

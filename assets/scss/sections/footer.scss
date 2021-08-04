@@ -1,0 +1,115 @@
+@use '../globals/variables.scss' as vars;
+@use '../globals/palette.scss' as palette;
+@use '../globals/breakpoints.scss' as breakpoints;
+@use '../globals/helpers.scss' as helpers;
+
+footer {
+    background-color: palette.$navy;
+    color: palette.$white;
+    padding: 30px 30px 20px;
+    > section {
+        max-width: vars.$header-max-width;
+        margin: auto;
+        a {
+            color: palette.$white;
+            text-decoration: none;
+            font-size: 14px;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        &.sign-up {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 130px;
+            > div,
+            > nav {
+                width: 100%;
+            } 
+            > div {
+                max-width: 380px;
+                h2 {
+                    font-size: 18px;
+                    margin-bottom: 40px;
+                    margin-top: 0;
+                }
+                #mc_embed_signup {
+                    padding-right: 20px;
+                    form {
+                        .mc-field-group {
+                            position: relative;
+                            border-bottom: 1px solid palette.$white;
+                            height: 40px;
+                            @include helpers.responsive-input(palette.$white);
+
+                            button {
+                                background-color: transparent;
+                                border: none;
+                                cursor: pointer;
+                                position: absolute;
+                                right: -4px;
+                                top: 10px;
+                                width: 30px;
+                                svg {
+                                    fill : palette.$white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            > nav {
+                display: inline-flex;
+                justify-content: space-between;
+                padding: 0 1rem;
+                max-width: 350px;
+                ul {
+                    li {
+                        line-height: 17.5px;
+                    }
+                }
+            }
+        }
+        &.copyright {
+           display: flex;
+           justify-content: space-between;
+           p {
+               margin: 0;
+           } 
+        }
+    }
+    @include breakpoints.media-breakpoint-down('sm') {
+        // border: 1px solid red;
+        padding: 30px 20px 20px;
+        > section {
+            &.sign-up {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 70px;
+                > div,
+                > nav {
+                    min-width: 100%;
+                }
+                > div {
+                    margin-bottom: 65px;
+                    h2 {
+                        font-size: 14px;
+                        margin-bottom: 30px;
+                        padding-right: 10%;
+                        line-height: 17.5px;
+                    }
+                }
+                > nav {
+                    padding: 0;
+                    display: flex;
+                    flex-direction: column;
+                    ul {
+                        &:first-of-type {
+                            margin-bottom: 30px;   
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

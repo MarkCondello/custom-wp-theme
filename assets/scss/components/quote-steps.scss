@@ -1,0 +1,31 @@
+@use '../globals/palette.scss' as palette;
+@use '../globals/breakpoints.scss' as breakpoints;
+
+.quote-steps {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 170px);
+    grid-gap: 7px;
+    justify-content: center;
+    margin: 65px auto;
+
+    a {
+        border-radius: 7px;
+        min-height: 4px;
+        width: 100%;
+        
+        &.active{
+            background-color: palette.$navy;
+        }
+        
+        &.inactive {
+            background-color: palette.$navy-faded;
+            cursor: default;
+            pointer-events: none;
+        }
+    }
+
+    @include breakpoints.media-breakpoint-down('sm'){
+        grid-template-columns: repeat(auto-fit, 107px);
+    }
+}

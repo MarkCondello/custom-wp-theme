@@ -1,0 +1,229 @@
+<?php
+	
+
+//This filter shows the maintenance template
+//add_filter( 'template_include', 'show_maintenance_page', 99 );
+function show_maintenance_page( $template ) {
+    if ( !current_user_can( 'edit_themes' ) || !is_user_logged_in() ){
+        $new_template = locate_template( array( 'maintenance-template.php' ) );
+        if ( !empty( $new_template ) ) {
+            return $new_template;
+        }
+	}
+	return $template;
+}
+
+// Adding WP Functions & Theme Support
+function joints_theme_support() {
+
+	// Add WP Thumbnail Support
+	add_theme_support( 'post-thumbnails' );
+	
+	// Default thumbnail size
+	set_post_thumbnail_size(1200, 1200, true);
+
+	//custom thumbnail size for event down pages
+	add_image_size('downpage-banner', 1749, 499);
+
+	// Add RSS Support
+	add_theme_support( 'automatic-feed-links' );
+	
+	// Add Support for WP Controlled Title Tag
+	add_theme_support( 'title-tag' );
+	
+	// Add HTML5 Support
+	add_theme_support( 'html5', 
+	         array( 
+	         	'comment-list', 
+	         	'comment-form', 
+	         	'search-form', 
+	         ) 
+	);
+	
+	add_theme_support( 'custom-logo', array(
+		'height'      => 100,
+		'width'       => 400,
+		'flex-height' => true,
+		'flex-width'  => true,
+		'header-text' => array( 'site-title', 'site-description' ),
+	) );
+	
+	// Adding post format support
+	 add_theme_support( 'post-formats',
+		array(
+			'aside',             // title less blurb
+			'gallery',           // gallery of images
+			'link',              // quick link to other site
+			'image',             // an image
+			'quote',             // a quick quote
+			'status',            // a Facebook like status update
+			'video',             // video
+			'audio',             // audio
+			'chat'               // chat transcript
+		)
+	); 
+
+	add_theme_support(
+		'editor-font-sizes',
+		array(
+			array(
+				'name'      => __( 'Small', 'markcond' ),
+				'shortName' => __( 'S', 'markcond' ),
+				'size'      => 12,
+				'slug'      => 'small',
+			),
+			array(
+				'name'      => __( 'Normal', 'markcond' ),
+				'shortName' => __( 'M', 'markcond' ),
+				'size'      => 16,
+				'slug'      => 'normal',
+			),
+			array(
+				'name'      => __( 'Large', 'markcond' ),
+				'shortName' => __( 'L', 'markcond' ),
+				'size'      => 24,
+				'slug'      => 'large',
+			),
+			array(
+				'name'      => __( 'Huge', 'markcond' ),
+				'shortName' => __( 'XL', 'markcond' ),
+				'size'      => 36,
+				'slug'      => 'huge',
+			),
+		)
+	);
+
+	add_theme_support(
+		'editor-color-palette',
+		array(
+	 
+			array(
+				'name'  => __( 'Purple', 'markcond' ),
+				'slug'  => 'purple',
+				'color' => '#5e2696',
+			),
+			array(
+				'name'  => __( 'Grey', 'markcond' ),
+				'slug'  => 'grey',
+				'color' => '#4d4d4d',
+			),
+			array(
+				'name'  => __( 'Pink', 'markcond' ),
+				'slug'  => 'pink',
+				'color' => '#f552a6',
+			),
+			array(
+				'name'  => __( 'Beige', 'markcond' ),
+				'slug'  => 'beige',
+				'color' => '#ffeca7',
+			),
+			array(
+				'name'  => __( 'White', 'markcond' ),
+				'slug'  => 'white',
+				'color' => '#ffffff',
+			),
+		)
+	);
+
+	
+	// Set the maximum allowed width for any content in the theme, like oEmbeds and images added to posts.
+	$GLOBALS['content_width'] = apply_filters( 'joints_theme_support', 1200 );	
+	
+} /* end theme support */
+
+add_action( 'after_setup_theme', 'joints_theme_support' );
+
+
+function theme_custom_blocks()
+{
+	wp_register_script(
+		'markcond-blocks-script', 
+		get_template_directory_uri() . '/build/index.js', 
+		array('wp-blocks', 'wp-components', 'wp-i18n', 'wp-data', 'wp-editor')
+	);
+
+	wp_enqueue_style( 'markcond-blocks-styles-editor', get_template_directory_uri() . '/public/css/editor.css', array(), filemtime(get_template_directory() . '/src/scss'), 'all' );
+
+
+	//ToDo: This below should be a loop from an array of blockNames
+	register_block_type(
+		'markcond/custom-cta', 
+		array(
+			'editor_script' => 'markcond-blocks-script',
+		)
+	);
+
+	// register_block_type(
+	// 	'markcond/affiliates',
+	// 	array(
+	// 		'editor_script' => 'markcond-blocks-script',
+	// 		'editor_style'  => 'markcond-blocks-styles-editor',
+	// 	)
+	// );
+
+	register_block_type(
+		'markcond/full-width-block',
+		array(
+			'editor_script' => 'markcond-blocks-script',
+			'editor_style'  => 'markcond-blocks-styles-editor',
+		)
+	);
+
+	
+}
+add_action('init', 'theme_custom_blocks'); 
+
+
+
+//Adds Featured Image URL to the WP REST Post API Response
+// add_action('rest_api_init', 'get_affiliate_meta');
+// function get_affiliate_meta(){
+// 	register_rest_field('affiliate', 'featured_image', 
+// 		array(
+// 			'get_callback' => 'markcond_get_featured_image',
+// 			'update_callback' => null, //we only require the url
+// 			'schema' => null
+// 		)
+// 	);
+
+// 	register_rest_field('affiliate', 'website_url', 
+// 		array(
+// 			'get_callback' => 'markcond_get_affiliate_website',
+// 			'update_callback' => null, //we only require the url
+// 			'schema' => null
+// 		)
+// 	);
+// }
+
+function markcond_get_featured_image ($object, $field_name, $request){
+	if($object['featured_media']){
+		$img = wp_get_attachment_image_src( $object['featured_media'], 'full', false);
+		return $img[0];
+	}
+}
+
+// function markcond_get_affiliate_website($object, $field_name, $request){
+// 		return get_field('website', $object['id']);
+// }
+
+/* Adds full width block support */
+add_theme_support('align-wide');
+
+function remove_comments($wp_admin_bar){
+	$wp_admin_bar->remove_node('comments');
+}
+add_action('admin_bar_menu', 'remove_comments', 999 );
+
+
+// Define path and URL to the ACF plugin.
+define( 'MY_ACF_PATH', get_stylesheet_directory() . '/includes/advanced-custom-fields/' );
+define( 'MY_ACF_URL', get_stylesheet_directory_uri() . '/includes/advanced-custom-fields/' );
+
+// Include the ACF plugin.
+include_once( MY_ACF_PATH . 'acf.php' );
+
+// Customize the url setting to fix incorrect asset URLs.
+add_filter('acf/settings/url', 'my_acf_settings_url');
+function my_acf_settings_url( $url ) {
+    return MY_ACF_URL;
+}

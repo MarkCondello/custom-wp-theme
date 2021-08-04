@@ -1,0 +1,101 @@
+@use './fonts.scss';
+@use './palette.scss' as palette;
+@use './breakpoints.scss' as breakpoints;
+body {
+    font-family: 'neue-montreal', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+    color: palette.$navy;
+    ul {
+        list-style: none;
+        padding-left: 0;
+        &:not(.menu, .accordion ) li {
+            position: relative;
+            &::before {
+                content: '';
+                background-color: inherit;
+                border-radius: 50%;
+                height: 4px;
+                left: -20px;
+                position: absolute;
+                top: 8px;
+                width: 4px;
+            }
+        }
+        
+    }
+    // ToDo: Need to check the vw value of each of these clamps
+    h1,
+    h4 {
+        font-size: clamp(22px, 10vw, 30px);
+        font-weight: 400;
+        line-height: clamp(26.4px, 30px, 36px);
+        letter-spacing: 1px;
+
+        margin-top: 65px;
+        margin-bottom: 65px;
+        // margin-top: clamp(45px, 65px, 65px);
+        // margin-bottom: clamp(45px, 65px, 65px);
+        @include breakpoints.media-breakpoint-down('md'){
+            margin-top: 45px;
+            margin-bottom: 45px;
+        }
+    }
+    h2 {
+        font-size: clamp(17px, 3vw, 20px);
+        font-weight: 400;
+        line-height: clamp(21.25px, 3vw, 25px);
+        letter-spacing: 1px;
+        margin-top: 135px;
+        margin-bottom: 100px;
+        // margin-top: clamp(60px, 3vw, 135px);
+        // margin-bottom: clamp(60px, 3vw, 100px);
+        @include breakpoints.media-breakpoint-down('md'){
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+    }
+    h3 {
+        font-size: 12px;
+        font-weight: 600; //Figma had 400 but looks to light compared to design
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        // margin-top: clamp(15px, 2vw, 30px);
+        // margin-bottom: clamp(15px, 2vw, 30px);
+        @include breakpoints.media-breakpoint-down('md'){
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+    }
+    h4 {
+        margin-top: 30px;
+        margin-bottom: 35px;
+    }
+    h5,
+    h6,
+    p {
+        margin-bottom: 12px;
+        margin-bottom: clamp(5px, 1vw, 12px);
+    }
+    p, li, input, label {
+        font-style: normal;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.01em;
+    }
+    th {
+        font-size: 11px;
+        line-height: 13px;
+        letter-spacing: 0.015em;
+        text-transform: uppercase;
+    }
+    small {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 21.5px;
+    }
+}
+
+a {
+    transition: color 0.2s linear;
+}

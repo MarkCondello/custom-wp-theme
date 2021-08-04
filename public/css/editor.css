@@ -1,0 +1,112 @@
+@use './reset.scss';
+@use './fonts.scss';
+@use './typography.scss';
+@use './svgs.scss';
+@use './forms.scss';
+@use './tables.scss';
+@use './fa-fonts.css';
+.markcond-full-width-block {
+  border: 1px dashed grey;
+  padding: 6rem 0px;
+}
+
+.markcond-full-width-block .wp-block-column {
+  margin: 0;
+}
+
+.cta-block.left-align {
+  text-align: left;
+}
+
+.cta-block.center-align {
+  text-align: center;
+}
+
+.cta-block.right-align {
+  text-align: right;
+}
+
+.cta {
+  min-width: 300px;
+  background-color: purple;
+  padding: 1rem;
+  text-align: center;
+  font-family: 'SuperclarendonRegular';
+  font-weight: 300;
+  color: white;
+  font-size: 1.65rem;
+  border: 2px solid purple;
+  transition: all .5s;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.cta:hover {
+  background-color: transparent;
+  color: purple;
+  text-decoration: none;
+}
+
+@media (max-width: 782px) {
+  .cta {
+    padding: .5rem;
+    font-size: 1rem;
+    min-width: 220px;
+  }
+}
+
+/*
+WP block overrides
+*/
+body .content h1,
+body .content .h1,
+body .wp-block-heading h1 {
+  color: purple;
+  font-family: 'MyriadProRegular';
+}
+
+body a {
+  font-weight: 600;
+}
+
+body h1 a, body .h1 a, body h2 a, body .h2 a, body h3 a, body .h3 a, body h4 a, body .h4 a, body h5 a, body .h5 a, body h6 a, body .h6 a {
+  font-weight: 300;
+}
+
+body .edit-post-layout__content .wp-block-heading h1 {
+  font-size: 56px;
+}
+
+body .edit-post-layout__content .wp-block-heading h2,
+body .edit-post-layout__content .wp-block-heading h3,
+body .edit-post-layout__content .wp-block-heading h4,
+body .edit-post-layout__content .wp-block-heading h6 {
+  font-family: 'MyriadProRegular';
+  color: grey;
+}
+
+body .edit-post-layout__content .editor-rich-text p {
+  font-family: 'MyriadProRegular';
+  color: grey;
+}
+
+body .edit-post-layout__content .editor-rich-text p a {
+  color: purple;
+}
+
+body .edit-post-layout__content hr.wp-block-separator {
+  border-color: purple;
+  max-width: 100% !important;
+}
+
+@media (max-width: 782px) {
+  body .edit-post-layout__content .wp-block-column {
+    flex-basis: 100%;
+  }
+  body .edit-post-layout__content .wp-block-column:nth-child(odd), body .edit-post-layout__content .wp-block-column:not(:last-child) {
+    margin-right: 0;
+  }
+  body .edit-post-layout__content .wp-block-column:not(:first-child), body .edit-post-layout__content .wp-block-column:nth-child(2n) {
+    margin-left: 0;
+  }
+}

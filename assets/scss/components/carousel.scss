@@ -1,0 +1,70 @@
+@use '../globals/palette.scss' as palette;
+@use '../globals/helpers.scss' as helpers;
+@use '../globals/breakpoints.scss' as breakpoints;
+@use '../globals/variables.scss' as variables;
+
+article.carousel {
+    margin: 65px 0;
+     overflow: hidden;
+    width: 100%;
+    ul {
+        list-style: none;
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
+        transition: left 1s;
+
+        li {
+            padding: 0 150px;
+            width: 100%;
+            max-width: variables.$content-max-width;
+            h4 {
+                display: inline;
+                @include helpers.quote-marks(-15px, null, '::before');
+                line-height: 35px;
+                span {
+                    @include helpers.quote-marks(0);
+                }
+            }
+           img {
+               display: block;
+               margin: 30px auto;
+           } 
+        }
+    }
+    nav {
+        margin: 35px 0 65px;
+        display: flex;
+        justify-content: center;
+        button {
+            width: 11px;
+            height: 11px;
+            border: 1px solid palette.$navy;
+            border-radius: 50%;
+            background-color: transparent;
+            cursor: pointer;
+            margin: 0 3.5px;
+            padding: 0;
+            transition: background-color 1s;
+            
+            &.active {
+                background-color: palette.$navy;
+            }
+         }
+    }
+    @include breakpoints.media-breakpoint-down('sm') {
+        // border: 1px solid red;
+        margin-bottom: 0;
+        ul {
+            li {
+                padding: 0;
+                img {
+                    margin: 20px auto;
+                }
+            }
+        }
+        nav {
+            margin-bottom: 0;
+        }
+    }
+}

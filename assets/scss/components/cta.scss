@@ -1,0 +1,29 @@
+@use './../globals/palette.scss' as palette;
+@use '../globals/breakpoints.scss' as breakpoints;
+
+.cta {
+    background-color: palette.$navy; 
+    color: palette.$white;
+    cursor: pointer;
+    border-radius: 50px;
+    border: none;
+    width: 220px;
+    margin: 60px auto 130px;
+    display: block;
+    font-size: 12px;
+    padding: .95rem 0.85rem .85rem;
+    line-height: 1.2;
+    letter-spacing: 1.5px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color .5s;
+    @include breakpoints.media-breakpoint-down('md'){
+        margin: 65px auto; 
+        width: 205px;
+    }
+
+    &:hover {
+        background-color: palette.$navy-faded; 
+    }
+}

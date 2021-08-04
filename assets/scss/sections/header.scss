@@ -1,0 +1,45 @@
+@use '../globals/variables.scss' as vars;
+@use '../globals/breakpoints.scss' as breakpoints;
+
+header {
+    max-width: vars.$header-max-width;
+    margin: auto;
+    > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 25px 35px;
+        h1 {
+            margin: 0;
+            line-height: 0;
+            a {
+                display: block;
+                svg.logo {
+                    width: 144px;
+                }
+            }
+        }
+        nav {
+            a {
+                cursor: pointer;
+                svg.hamburger {
+                    width: 40px;  
+                }
+            }
+        }
+    }
+    @include breakpoints.media-breakpoint-down(lg) {
+        > div {
+            // border: 1px solid red;  
+            padding: 25px 15px 30px;
+            h1 {
+                a {
+                    svg.logo {
+                        width: 83px;
+                    }
+                }
+            }
+        }  
+    }
+}

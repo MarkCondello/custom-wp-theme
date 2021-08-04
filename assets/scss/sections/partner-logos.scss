@@ -1,0 +1,21 @@
+@use '../globals/breakpoints.scss' as breakpoints;
+
+article.partner-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, auto));    
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 35px;
+    img {
+        justify-self: center;
+        padding: 2rem 0;
+    }
+    @include breakpoints.media-breakpoint-down('sm'){
+        // border: 1px solid red;
+        grid-template-columns: repeat(auto-fit, minmax(50%, auto));    
+        img {
+            margin-bottom: 2.5rem;
+            padding: 0;
+        }
+    }
+}

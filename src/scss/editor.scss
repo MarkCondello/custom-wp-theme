@@ -1,0 +1,145 @@
+ @import "../../assets/scss/globals/globals.scss";
+// @import "../../assets/scss/fonts.scss";
+ 
+// .affiliate{
+//     border: 1px dashed grey;
+//     object-fit: cover;
+//     margin-bottom: 3rem;
+
+//     h4 {
+//         margin:0;
+//         color: purple;
+//         line-height: 1;
+//     }
+
+//     img {
+//         height: 200px;
+//         object-fit: cover;
+//         object-position: center;
+//         margin: 1.5rem auto;
+//         display: block;
+//     }
+//     p {
+//         font-size: 16px;
+//         line-height: 1.5;
+//     }
+// }
+
+.markcond-full-width-block {
+    border: 1px dashed grey;
+    padding: 6rem 0px;
+
+    .wp-block-column {
+        margin: 0;
+    }
+}
+
+.cta-block {
+    &.left-align {
+        text-align: left;
+    }
+
+    &.center-align {
+        text-align: center;
+    }
+
+    &.right-align {
+        text-align: right;
+    }
+} 
+
+.cta {
+    min-width: 300px;
+    background-color: purple;
+    padding: 1rem;
+    text-align: center;
+    font-family: 'SuperclarendonRegular';
+    font-weight: 300;
+    color: white;
+    font-size: 1.65rem;
+    border: 2px solid purple;
+    transition: all .5s;
+    display: inline-block;
+    text-decoration: none;
+
+    &:hover {
+        background-color: transparent;
+        color: purple;
+        text-decoration: none;
+    }
+
+    @media (max-width: 782px){
+        padding: .5rem;
+        font-size: 1rem;
+        min-width: 220px;
+    }
+}
+
+
+
+/*
+WP block overrides
+*/
+body {
+   .content h1,
+   .content .h1,
+    .wp-block-heading h1 {
+       color: purple;
+       font-family: 'MyriadProRegular';
+    }
+   
+    a {
+       font-weight: 600;
+    } 
+
+    h1, .h1, h2, .h2, h3, .h3 ,h4, .h4, h5, .h5, h6, .h6 {
+        a {
+            font-weight: 300;
+        }
+    }
+
+    .edit-post-layout__content {
+        .wp-block-heading h1 {
+            font-size: 56px;
+        }
+        
+        .wp-block-heading h2,
+        .wp-block-heading h3,
+        .wp-block-heading h4,
+        .wp-block-heading h6
+         {
+            font-family: 'MyriadProRegular';
+            color: grey;
+         }
+
+        .editor-rich-text p {
+            font-family: 'MyriadProRegular';
+            color: grey;
+
+            a {
+                color: purple;
+            } 
+        }
+
+        hr.wp-block-separator {
+            border-color: purple;
+            max-width: 100%!important;
+        }
+
+        @media (max-width: 782px){
+            .wp-block-column {
+                flex-basis: 100%;
+
+                &:nth-child(odd),
+                &:not(:last-child){
+                    margin-right: 0;
+                }
+
+                &:not(:first-child), 
+                &:nth-child(2n){
+                    margin-left:0;
+                }
+            }
+        }
+    }
+}

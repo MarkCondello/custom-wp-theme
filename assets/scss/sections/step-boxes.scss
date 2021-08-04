@@ -1,0 +1,39 @@
+@use '../globals/palette.scss' as palette;
+@use '../globals/breakpoints.scss' as breakpoints;
+
+article.step-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 230px);
+    align-items: center;
+    justify-content: center;
+    grid-gap: 30px;
+    margin-top: 60px;
+    figure {
+        text-align: center;
+        border: 1px solid palette.$navy;
+        padding:15px 22px 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        h1 {
+            margin: 0;
+            margin-bottom: 15px;
+        }
+        h2 {
+            margin: 0;
+        }
+    }
+    @include breakpoints.media-breakpoint-down('sm'){
+        margin-top: 30px;
+        + a.cta {
+            margin-top: 30px;
+        }
+    }
+    @include breakpoints.media-breakpoint-down('xs'){
+        // border: 1px solid green;
+        grid-template-columns: repeat(auto-fit, 100%);
+        figure {
+            max-height: 120px;
+        }
+    }
+}
