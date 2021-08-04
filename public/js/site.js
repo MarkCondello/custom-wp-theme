@@ -108,15 +108,27 @@ $(function () {});
 
 /***/ }),
 
+/***/ "./src/scss/editor.scss":
+/*!******************************!*\
+  !*** ./src/scss/editor.scss ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!*********************************************************!*\
-  !*** multi ./assets/js/site.js ./assets/scss/site.scss ***!
-  \*********************************************************/
+/*!********************************************************************************!*\
+  !*** multi ./assets/js/site.js ./assets/scss/site.scss ./src/scss/editor.scss ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /Users/markcondello/code/mark-condello/wp-content/themes/custom/assets/js/site.js */"./assets/js/site.js");
-module.exports = __webpack_require__(/*! /Users/markcondello/code/mark-condello/wp-content/themes/custom/assets/scss/site.scss */"./assets/scss/site.scss");
+__webpack_require__(/*! /Users/markcondello/code/mark-condello/wp-content/themes/custom/assets/scss/site.scss */"./assets/scss/site.scss");
+module.exports = __webpack_require__(/*! /Users/markcondello/code/mark-condello/wp-content/themes/custom/src/scss/editor.scss */"./src/scss/editor.scss");
 
 
 /***/ })
