@@ -13,13 +13,10 @@ For more info, check out the codex:
 http://codex.wordpress.org/Creating_Admin_Themes
 
 ******************************************************************/
-#login {
-  background-color: #fab;
-}
-
-.login h1 a {
-  width: 326px;
-  height: 67px;
+body.login #login h1 a {
+  background-image: url(../images/logos/ct.png);
+  width: 100px;
+  height: 100px;
   text-indent: -9999px;
   overflow: hidden;
   padding-bottom: 15px;

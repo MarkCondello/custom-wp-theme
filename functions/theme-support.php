@@ -142,7 +142,7 @@ function theme_custom_blocks()
 		array('wp-blocks', 'wp-components', 'wp-i18n', 'wp-data', 'wp-editor')
 	);
 
-	wp_enqueue_style( 'markcond-blocks-styles-editor', get_template_directory_uri() . '/public/css/editor.css', array(), filemtime(get_template_directory() . '/src/scss'), 'all' );
+	wp_enqueue_style( 'markcond-blocks-styles-editor', get_template_directory_uri() . '/build/css/editor.css', array(), filemtime(get_template_directory() . '/src/scss'), 'all' );
 
 
 	//ToDo: This below should be a loop from an array of blockNames
