@@ -86,25 +86,14 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./assets/js/site.js":
-/*!***************************!*\
-  !*** ./assets/js/site.js ***!
-  \***************************/
+/***/ "./src/js/site.js":
+/*!************************!*\
+  !*** ./src/js/site.js ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 $(function () {});
-
-/***/ }),
-
-/***/ "./assets/scss/site.scss":
-/*!*******************************!*\
-  !*** ./assets/scss/site.scss ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -119,16 +108,39 @@ $(function () {});
 
 /***/ }),
 
+/***/ "./src/scss/login.scss":
+/*!*****************************!*\
+  !*** ./src/scss/login.scss ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/scss/site.scss":
+/*!****************************!*\
+  !*** ./src/scss/site.scss ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!********************************************************************************!*\
-  !*** multi ./assets/js/site.js ./assets/scss/site.scss ./src/scss/editor.scss ***!
-  \********************************************************************************/
+/*!************************************************************************************************!*\
+  !*** multi ./src/js/site.js ./src/scss/site.scss ./src/scss/editor.scss ./src/scss/login.scss ***!
+  \************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/markcondello/code/mark-condello/wp-content/themes/custom/assets/js/site.js */"./assets/js/site.js");
-__webpack_require__(/*! /Users/markcondello/code/mark-condello/wp-content/themes/custom/assets/scss/site.scss */"./assets/scss/site.scss");
-module.exports = __webpack_require__(/*! /Users/markcondello/code/mark-condello/wp-content/themes/custom/src/scss/editor.scss */"./src/scss/editor.scss");
+__webpack_require__(/*! /Users/markcondello/code/mark-condello/wp-content/themes/custom/src/js/site.js */"./src/js/site.js");
+__webpack_require__(/*! /Users/markcondello/code/mark-condello/wp-content/themes/custom/src/scss/site.scss */"./src/scss/site.scss");
+__webpack_require__(/*! /Users/markcondello/code/mark-condello/wp-content/themes/custom/src/scss/editor.scss */"./src/scss/editor.scss");
+module.exports = __webpack_require__(/*! /Users/markcondello/code/mark-condello/wp-content/themes/custom/src/scss/login.scss */"./src/scss/login.scss");
 
 
 /***/ })

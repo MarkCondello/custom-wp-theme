@@ -1,5 +1,5 @@
 <?php
-/* joints Custom Post Type Example
+/*  markcond Custom Post Type Example
 This page walks you through creating 
 a custom post type and taxonomies. You
 can edit this one or copy the following code 
@@ -16,21 +16,21 @@ in their own file.
 // 	register_post_type( 'event', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 // 	 	// let's now add all the options for this post type
 // 		array('labels' => array(
-// 			'name' => __('Events', 'jointswp'), /* This is the Title of the Group */
-// 			'singular_name' => __('Event', 'jointswp'), /* This is the individual type */
-// 			'all_items' => __('All Events', 'jointswp'), /* the all items menu item */
-// 			'add_new' => __('Add New Event', 'jointswp'), /* The add new menu item */
-// 			'add_new_item' => __('Add New Events', 'jointswp'), /* Add New Display Title */
-// 			'edit' => __( 'Edit Event', 'jointswp' ), /* Edit Dialog */
-// 			'edit_item' => __('Edit Event', 'jointswp'), /* Edit Display Title */
-// 			'new_item' => __('New Events', 'jointswp'), /* New Display Title */
-// 			'view_item' => __('View Events', 'jointswp'), /* View Display Title */
-// 			'search_items' => __('Search Events', 'jointswp'), /* Search Custom Type Title */ 
-// 			'not_found' =>  __('Nothing found in the Database.', 'jointswp'), /* This displays if there are no entries yet */ 
-// 			'not_found_in_trash' => __('Nothing found in Trash', 'jointswp'), /* This displays if there is nothing in the trash */
+// 			'name' => __('Events', ' markcondwp'), /* This is the Title of the Group */
+// 			'singular_name' => __('Event', ' markcondwp'), /* This is the individual type */
+// 			'all_items' => __('All Events', ' markcondwp'), /* the all items menu item */
+// 			'add_new' => __('Add New Event', ' markcondwp'), /* The add new menu item */
+// 			'add_new_item' => __('Add New Events', ' markcondwp'), /* Add New Display Title */
+// 			'edit' => __( 'Edit Event', ' markcondwp' ), /* Edit Dialog */
+// 			'edit_item' => __('Edit Event', ' markcondwp'), /* Edit Display Title */
+// 			'new_item' => __('New Events', ' markcondwp'), /* New Display Title */
+// 			'view_item' => __('View Events', ' markcondwp'), /* View Display Title */
+// 			'search_items' => __('Search Events', ' markcondwp'), /* Search Custom Type Title */ 
+// 			'not_found' =>  __('Nothing found in the Database.', ' markcondwp'), /* This displays if there are no entries yet */ 
+// 			'not_found_in_trash' => __('Nothing found in Trash', ' markcondwp'), /* This displays if there is nothing in the trash */
 // 			'parent_item_colon' => ''
 // 			), /* end of arrays */
-// 			'description' => __( 'Events posts for promoting upcoming and recurring events.', 'jointswp' ), /* Custom Type Description */
+// 			'description' => __( 'Events posts for promoting upcoming and recurring events.', ' markcondwp' ), /* Custom Type Description */
 // 			'public' => true,
 // 			'publicly_queryable' => true,
 // 			'exclude_from_search' => false,
@@ -53,21 +53,21 @@ in their own file.
 // 	register_post_type( 'affiliate', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 // 			// let's now add all the options for this post type
 // 		array('labels' => array(
-// 			'name' => __('Affiliates', 'jointswp'), /* This is the Title of the Group */
-// 			'singular_name' => __('Affiliate', 'jointswp'), /* This is the individual type */
-// 			'all_items' => __('All Affiliates', 'jointswp'), /* the all items menu item */
-// 			'add_new' => __('Add New Affiliate', 'jointswp'), /* The add new menu item */
-// 			'add_new_item' => __('Add New Affiliates', 'jointswp'), /* Add New Display Title */
-// 			'edit' => __( 'Edit Affiliate', 'jointswp' ), /* Edit Dialog */
-// 			'edit_item' => __('Edit Affiliate', 'jointswp'), /* Edit Display Title */
-// 			'new_item' => __('New Affiliates', 'jointswp'), /* New Display Title */
-// 			'view_item' => __('View Affiliates', 'jointswp'), /* View Display Title */
-// 			'search_items' => __('Search Affiliates', 'jointswp'), /* Search Custom Type Title */ 
-// 			'not_found' =>  __('Nothing found in the Database.', 'jointswp'), /* This displays if there are no entries yet */ 
-// 			'not_found_in_trash' => __('Nothing found in Trash', 'jointswp'), /* This displays if there is nothing in the trash */
+// 			'name' => __('Affiliates', ' markcondwp'), /* This is the Title of the Group */
+// 			'singular_name' => __('Affiliate', ' markcondwp'), /* This is the individual type */
+// 			'all_items' => __('All Affiliates', ' markcondwp'), /* the all items menu item */
+// 			'add_new' => __('Add New Affiliate', ' markcondwp'), /* The add new menu item */
+// 			'add_new_item' => __('Add New Affiliates', ' markcondwp'), /* Add New Display Title */
+// 			'edit' => __( 'Edit Affiliate', ' markcondwp' ), /* Edit Dialog */
+// 			'edit_item' => __('Edit Affiliate', ' markcondwp'), /* Edit Display Title */
+// 			'new_item' => __('New Affiliates', ' markcondwp'), /* New Display Title */
+// 			'view_item' => __('View Affiliates', ' markcondwp'), /* View Display Title */
+// 			'search_items' => __('Search Affiliates', ' markcondwp'), /* Search Custom Type Title */ 
+// 			'not_found' =>  __('Nothing found in the Database.', ' markcondwp'), /* This displays if there are no entries yet */ 
+// 			'not_found_in_trash' => __('Nothing found in Trash', ' markcondwp'), /* This displays if there is nothing in the trash */
 // 			'parent_item_colon' => ''
 // 			), /* end of arrays */
-// 			'description' => __( 'Affiliates posts for displaying partners or sponsors associated to events.', 'jointswp' ), /* Custom Type Description */
+// 			'description' => __( 'Affiliates posts for displaying partners or sponsors associated to events.', ' markcondwp' ), /* Custom Type Description */
 // 			'public' => true,
 // 			'publicly_queryable' => true,
 // 			'exclude_from_search' => false,
@@ -99,16 +99,16 @@ in their own file.
     // 	array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
     // 	array('hierarchical' => true,     /* if this is true, it acts like categories */             
     // 		'labels' => array(
-    // 			'name' => __( 'Custom Categories', 'jointswp' ), /* name of the custom taxonomy */
-    // 			'singular_name' => __( 'Custom Category', 'jointswp' ), /* single taxonomy name */
-    // 			'search_items' =>  __( 'Search Custom Categories', 'jointswp' ), /* search title for taxomony */
-    // 			'all_items' => __( 'All Custom Categories', 'jointswp' ), /* all title for taxonomies */
-    // 			'parent_item' => __( 'Parent Custom Category', 'jointswp' ), /* parent title for taxonomy */
-    // 			'parent_item_colon' => __( 'Parent Custom Category:', 'jointswp' ), /* parent taxonomy title */
-    // 			'edit_item' => __( 'Edit Custom Category', 'jointswp' ), /* edit custom taxonomy title */
-    // 			'update_item' => __( 'Update Custom Category', 'jointswp' ), /* update title for taxonomy */
-    // 			'add_new_item' => __( 'Add New Custom Category', 'jointswp' ), /* add new title for taxonomy */
-    // 			'new_item_name' => __( 'New Custom Category Name', 'jointswp' ) /* name title for taxonomy */
+    // 			'name' => __( 'Custom Categories', ' markcondwp' ), /* name of the custom taxonomy */
+    // 			'singular_name' => __( 'Custom Category', ' markcondwp' ), /* single taxonomy name */
+    // 			'search_items' =>  __( 'Search Custom Categories', ' markcondwp' ), /* search title for taxomony */
+    // 			'all_items' => __( 'All Custom Categories', ' markcondwp' ), /* all title for taxonomies */
+    // 			'parent_item' => __( 'Parent Custom Category', ' markcondwp' ), /* parent title for taxonomy */
+    // 			'parent_item_colon' => __( 'Parent Custom Category:', ' markcondwp' ), /* parent taxonomy title */
+    // 			'edit_item' => __( 'Edit Custom Category', ' markcondwp' ), /* edit custom taxonomy title */
+    // 			'update_item' => __( 'Update Custom Category', ' markcondwp' ), /* update title for taxonomy */
+    // 			'add_new_item' => __( 'Add New Custom Category', ' markcondwp' ), /* add new title for taxonomy */
+    // 			'new_item_name' => __( 'New Custom Category Name', ' markcondwp' ) /* name title for taxonomy */
     // 		),
     // 		'show_admin_column' => true, 
     // 		'show_ui' => true,
@@ -122,16 +122,16 @@ in their own file.
     // 	array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
     // 	array('hierarchical' => false,    /* if this is false, it acts like tags */                
     // 		'labels' => array(
-    // 			'name' => __( 'Custom Tags', 'jointswp' ), /* name of the custom taxonomy */
-    // 			'singular_name' => __( 'Custom Tag', 'jointswp' ), /* single taxonomy name */
-    // 			'search_items' =>  __( 'Search Custom Tags', 'jointswp' ), /* search title for taxomony */
-    // 			'all_items' => __( 'All Custom Tags', 'jointswp' ), /* all title for taxonomies */
-    // 			'parent_item' => __( 'Parent Custom Tag', 'jointswp' ), /* parent title for taxonomy */
-    // 			'parent_item_colon' => __( 'Parent Custom Tag:', 'jointswp' ), /* parent taxonomy title */
-    // 			'edit_item' => __( 'Edit Custom Tag', 'jointswp' ), /* edit custom taxonomy title */
-    // 			'update_item' => __( 'Update Custom Tag', 'jointswp' ), /* update title for taxonomy */
-    // 			'add_new_item' => __( 'Add New Custom Tag', 'jointswp' ), /* add new title for taxonomy */
-    // 			'new_item_name' => __( 'New Custom Tag Name', 'jointswp' ) /* name title for taxonomy */
+    // 			'name' => __( 'Custom Tags', ' markcondwp' ), /* name of the custom taxonomy */
+    // 			'singular_name' => __( 'Custom Tag', ' markcondwp' ), /* single taxonomy name */
+    // 			'search_items' =>  __( 'Search Custom Tags', ' markcondwp' ), /* search title for taxomony */
+    // 			'all_items' => __( 'All Custom Tags', ' markcondwp' ), /* all title for taxonomies */
+    // 			'parent_item' => __( 'Parent Custom Tag', ' markcondwp' ), /* parent title for taxonomy */
+    // 			'parent_item_colon' => __( 'Parent Custom Tag:', ' markcondwp' ), /* parent taxonomy title */
+    // 			'edit_item' => __( 'Edit Custom Tag', ' markcondwp' ), /* edit custom taxonomy title */
+    // 			'update_item' => __( 'Update Custom Tag', ' markcondwp' ), /* update title for taxonomy */
+    // 			'add_new_item' => __( 'Add New Custom Tag', ' markcondwp' ), /* add new title for taxonomy */
+    // 			'new_item_name' => __( 'New Custom Tag Name', ' markcondwp' ) /* name title for taxonomy */
     // 		),
     // 		'show_admin_column' => true,
     // 		'show_ui' => true,

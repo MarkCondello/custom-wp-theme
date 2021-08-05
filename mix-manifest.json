@@ -1,6 +1,7 @@
 {
-    "/public/js/site.js": "/public/js/site.js",
-    "/public/css/site.css": "/public/css/site.css",
-    "/public/css/editor.css": "/public/css/editor.css",
-    "/public/js/vendor.js": "/public/js/vendor.js"
+    "/build/js/site.js": "/build/js/site.js",
+    "/build/css/site.css": "/build/css/site.css",
+    "/build/css/editor.css": "/build/css/editor.css",
+    "/build/css/login.css": "/build/css/login.css",
+    "/build/js/vendor.js": "/build/js/vendor.js"
 }

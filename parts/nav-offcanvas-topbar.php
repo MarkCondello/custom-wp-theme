@@ -2,7 +2,7 @@
 /**
  * The off-canvas menu uses the Off-Canvas Component
  *
- * For more info: http://jointswp.com/docs/off-canvas-menu/
+ * For more info: http:// markcondwp.com/docs/off-canvas-menu/
  */
 ?>
  
@@ -15,7 +15,7 @@
 		</ul>
 	</div>
 	<div class="top-bar-right show-for-medium">
-		<?php joints_top_nav(); ?>	
+		<?php  markcond_top_nav(); ?>	
 	</div>
 	<div class="top-bar-right show-for-small-only">
 		<button type="button" data-toggle="off-canvas">

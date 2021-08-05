@@ -9,6 +9,6 @@
  * Webpack is compiling as the input file.
  */
 
- import './cta/index';
-//  import './affiliates/index';
- import './full_width_block/index';
+import './js/wp-blocks/cta/index';
+//  import './wp-blocks/affiliates/index';
+ import './js/wp-blocks/full_width_block/index';

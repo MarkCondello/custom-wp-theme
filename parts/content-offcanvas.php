@@ -2,7 +2,7 @@
 /**
  * The template part for displaying offcanvas content
  *
- * For more info: http://jointswp.com/docs/off-canvas-menu/
+ * For more info: http:// markcondwp.com/docs/off-canvas-menu/
  */
 ?>
 
@@ -12,6 +12,6 @@
    </button>
 
 
-   <?php joints_top_nav(); ?>	
-	<!-- <?php //joints_off_canvas_nav(); ?> -->
+   <?php  markcond_top_nav(); ?>	
+	<!-- <?php // markcond_off_canvas_nav(); ?> -->
 </div>

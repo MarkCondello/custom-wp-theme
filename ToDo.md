@@ -5,7 +5,7 @@ Laravel mix in WP
 https://serversideup.net/using-laravel-mix-in-a-wordpress-theme/
 
 #High Priority
-Move all the assets into the src dir
-Restructure src blocks
-
 update npm packages
+
+#Medium
+Add reset css

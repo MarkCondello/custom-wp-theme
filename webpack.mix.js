@@ -16,16 +16,17 @@ const mix = require('laravel-mix');
  */
 
 mix
-    .js('assets/js/site.js', 'public/js')
-    .sass('assets/scss/site.scss', 'public/css')
-    .sass('src/scss/editor.scss', 'public/css')
-    .copy('assets/fonts/', 'public/fonts/')
-    .copy('assets/images/', 'public/images/')
+    .js('src/js/site.js', 'build/js')
+    .sass('src/scss/site.scss', 'build/css')
+    .sass('src/scss/editor.scss', 'build/css')
+    .sass('src/scss/login.scss', 'build/css')
+    .copy('src/fonts/', 'build/fonts/')
+    .copy('src/images/', 'build/images/')
 
     .combine
     ([
         'node_modules/jquery/dist/jquery.min.js',
-    ], 'public/js/vendor.js')
+    ], 'build/js/vendor.js')
 
 
     // .purgeCss({
